@@ -1,0 +1,27 @@
+
+[core]
+excludesfile = ~/.gitignore
+	editor = /usr/local/bin/vim
+
+[hub]
+protocol = https
+[user]
+	name = Akshay Karle
+	email = akshay.a.karle@gmail.com
+
+[alias]
+  st=status
+  di=diff -M
+  dc=diff --cached -M
+  co=checkout
+  l=log --pretty=format:'%Cblue %d %Creset %cd %Cred %h %Cgreen %aN %Creset %s' --color --graph --all --date=short
+  br=branch
+
+[color]
+	ui = true
+[push]
+	default = current
+[merge]
+	defaultToUpstream = true
+[help]
+	autocorrect = 3
