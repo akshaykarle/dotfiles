@@ -40,6 +40,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'dkprice/vim-easygrep'
 
+Plugin 'jplaut/vim-arduino-ino'
+
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'honza/vim-snippets'
 
