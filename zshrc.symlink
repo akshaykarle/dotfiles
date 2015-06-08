@@ -89,6 +89,12 @@ then
     source $f
   done
 fi
+
+if [ -f ~/.services/git-hub/init ]
+then
+  source ~/.services/git-hub/init
+fi
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
