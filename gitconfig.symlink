@@ -11,11 +11,12 @@ protocol = https
 
 [alias]
   st=status
-  di=diff -M
-  dc=diff --cached -M
+  di=diff -M --submodule
+  dc=diff --cached -M --submodule
   co=checkout
   l=log --pretty=format:'%Cblue %d %Creset %cd %Cred %h %Cgreen %aN %Creset %s' --color --graph --all --date=short
   br=branch
+  supdate = submodule update --remote --merge
 
 [color]
 	ui = true
