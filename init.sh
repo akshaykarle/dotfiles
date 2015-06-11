@@ -9,4 +9,13 @@ symlink_dotfiles() {
   done
 }
 
+change_shell_to_zsh() {
+  if [ ${SHELL} != '/bin/zsh' ]
+  then
+    chsh -s /bin/zsh
+  fi
+}
+
+git submodule update --init
 symlink_dotfiles
+change_shell_to_zsh
