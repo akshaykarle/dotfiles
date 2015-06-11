@@ -9,9 +9,23 @@ symlink_dotfiles() {
   done
 }
 
+install_zsh() {
+  if [ -n "$(command -v yum)" ]
+  then
+    sudo yum install -y zsh
+  elif [ -n "$(command -v apt-get)" ]
+  then
+    sudo apt-get install -y zsh
+  elif [ -n "$(command -v dnf)" ]
+  then
+    sudo dnf install -y zsh
+  fi
+}
+
 change_shell_to_zsh() {
   if [ ${SHELL} != '/bin/zsh' ]
   then
+    install_zsh
     chsh -s /bin/zsh
   fi
 }
