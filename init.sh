@@ -30,6 +30,10 @@ change_shell_to_zsh() {
   fi
 }
 
+
 git submodule update --init
 symlink_dotfiles
 change_shell_to_zsh
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim -c ":PluginInstall"
