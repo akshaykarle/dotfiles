@@ -124,7 +124,7 @@ filetype plugin on
 set background=dark
 colorscheme solarized
 
-let mapleader=","
+let mapleader="\<Space>"
 
 if &term =~ "xterm" || &term =~ "screen"
   let g:CommandTCancelMap = ['<ESC>', '<C-c>']
