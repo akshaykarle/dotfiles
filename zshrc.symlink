@@ -111,9 +111,15 @@ then
   export NVM_DIR=~/.nvm
   source $(brew --prefix nvm)/nvm.sh
 fi
+
+wifi-password-finder() {
+  security find-generic-password -ga $1 | grep password
+}
+
 alias vg="vagrant"
 alias be="bundle exec"
 alias r="bundle exec rake"
 alias rdbmt="bundle exec rake db:create db:migrate db:test:prepare"
 alias rdbreset="bundle exec rake db:drop db:create db:migrate db:test:prepare"
 alias gh="git hub"
+alias wifi-password-for-network=wifi-password-finder
