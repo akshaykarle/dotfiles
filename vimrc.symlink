@@ -81,6 +81,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-dispatch'
 
 Plugin 'fatih/vim-go'
 
@@ -160,7 +161,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>e :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_runner = "os_x_iterm2"
-let g:rspec_command = "!bundle exec rspec {spec}"
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
