@@ -40,7 +40,7 @@ Plugin 'talek/obvious-resize'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'nathanaelkane/vim-indent-guides'
-let g:indent_guides_enable_on_vim_startup = 0
+let g:indent_guides_enable_on_vim_startup = 1
 set ts=2 sw=2 et
 
 Plugin 'ntpeters/vim-better-whitespace'
