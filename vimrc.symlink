@@ -103,6 +103,8 @@ filetype plugin indent on    " required
 set shiftwidth=2
 set softtabstop=2
 
+set spell
+
 set backspace=indent,eol,start
 
 set autoindent
