@@ -83,6 +83,10 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+mkdir -p $HOME/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 if [ -d ~/.services ]
 then
   for f in $(ls ~/.services/.*)
