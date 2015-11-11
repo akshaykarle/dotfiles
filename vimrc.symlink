@@ -202,3 +202,9 @@ noremap <silent> <Leader><Up> :<C-U>ObviousResizeUp<CR>
 noremap <silent> <Leader><Down> :<C-U>ObviousResizeDown<CR>
 noremap <silent> <Leader><Left> :<C-U>ObviousResizeLeft<CR>
 noremap <silent> <Leader><Right> :<C-U>ObviousResizeRight<CR>
+
+" Don't store swp files in project directories
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
