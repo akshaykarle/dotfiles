@@ -116,6 +116,10 @@ wifi-password-finder() {
   security find-generic-password -ga $1 | grep password
 }
 
+global-search-replace() {
+  ack $1 -l --print0 | xargs -0 sed -i '' "s/$1/$2/g"
+}
+
 alias vg="vagrant"
 alias be="bundle exec"
 alias r="bundle exec rake"
