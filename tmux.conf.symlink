@@ -36,7 +36,7 @@ bind-key a send-prefix # for nested tmux sessions
 # Global options
 ############################################################################
 # large history
-set-option -g history-limit 10000
+set-option -g history-limit 30000
 
 # colors
 set-option -g default-terminal "screen-256color" #"xterm-256color" # "screen-256color"
