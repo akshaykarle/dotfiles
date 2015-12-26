@@ -22,6 +22,21 @@ install_zsh() {
   fi
 }
 
+install_brew() {
+  if [ -n "$(uname | grep 'Darwin')" ]
+  then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+}
+
+setup_brew_dependencies() {
+  if [ -n "$(command -v brew)" ]
+  then
+    brew tap Homebrew/bundle
+    brew bundle
+  fi
+}
+
 change_shell_to_zsh() {
   if [ ${SHELL} != '/bin/zsh' ]
   then
@@ -30,7 +45,8 @@ change_shell_to_zsh() {
   fi
 }
 
-
+install_brew
+setup_brew_dependencies
 git submodule update --init
 symlink_dotfiles
 change_shell_to_zsh
