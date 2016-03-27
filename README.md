@@ -4,4 +4,4 @@ Dotfiles for setting up vim, zsh, git and tmux. If you are running on OSX, it wi
 
 To get started simply run:
 
-`./init.sh`
+`sh setup.sh`
