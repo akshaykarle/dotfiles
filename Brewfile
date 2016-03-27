@@ -1,5 +1,9 @@
+cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 tap 'homebrew/services'
+tap 'tmate-io/tmate'
+tap 'caskroom/cask'
+
 brew 'ack'
 brew 'autoconf'
 brew 'awscli'
@@ -42,3 +46,7 @@ brew 'ruby-build'
 brew 'rbenv'
 brew 'tmux'
 brew 'vim'
+brew 's3cmd'
+brew 'tmate'
+
+cask 'rawtherapee'
