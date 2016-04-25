@@ -48,5 +48,7 @@ brew 'tmux'
 brew 'vim'
 brew 's3cmd'
 brew 'tmate'
+brew 'kubernetes-cli'
 
 cask 'rawtherapee'
+cask 'libreoffice'
