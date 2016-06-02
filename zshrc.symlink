@@ -113,7 +113,7 @@ then
 fi
 
 wifi-password-finder() {
-  security find-generic-password -ga $1 | grep password
+  security find-generic-password -gwa $1
 }
 
 global-search-replace() {
