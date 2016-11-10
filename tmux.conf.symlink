@@ -42,10 +42,6 @@ set-option -g history-limit 30000
 set-option -g default-terminal "screen-256color" #"xterm-256color" # "screen-256color"
 set-option -g pane-active-border-fg green
 
-# utf8 support
-set-window-option -g utf8 on
-
-
 # basic settings
 set-window-option -g xterm-keys on # for vim
 set-window-option -g mode-keys vi # vi key
@@ -68,7 +64,6 @@ set -g terminal-overrides 'xterm*:smcup@:rmcup@'
 ############################################################################
 # Status Bar
 ############################################################################
-set-option -g status-utf8 on
 # set-option -g status-justify right
 set-option -g status-bg black # colour213 # pink
 set-option -g status-fg cyan
