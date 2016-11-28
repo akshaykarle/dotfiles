@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -x
 
 symlink_dotfiles() {
   for src in $(find -maxdepth 2 -name '*.symlink')
@@ -25,7 +24,7 @@ install_zsh() {
 install_brew() {
   if [ -n "$(uname | grep 'Darwin')" ]
   then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 }
 
