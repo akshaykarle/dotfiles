@@ -59,8 +59,7 @@ cask 'virtualbox'
 
 cask 'vagrant'
 cask 'chefdk'
-cask 'google-cloud-sdk'
-cask 'docker-toolbox'
+cask 'docker'
 
 cask 'skype'
 cask 'rawtherapee'
