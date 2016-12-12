@@ -4,7 +4,11 @@ symlink_dotfiles() {
   for src in $(find -maxdepth 2 -name '*.symlink')
   do
     dst="$HOME/.$(basename "${src%.*}")"
-    ln -s $(pwd)/$src $dst
+    if [ $1 == 'force' ]; then
+      ln -sf $(pwd)/$src $dst
+    else
+      ln -sf $(pwd)/$src $dst
+    fi
   done
 }
 
@@ -44,11 +48,18 @@ change_shell_to_zsh() {
   fi
 }
 
-install_brew
-setup_brew_dependencies
-git submodule update --init
-symlink_dotfiles
-change_shell_to_zsh
+if [ $# == 0 ]; then
+  echo 'Setting up everything'
+  install_brew
+  setup_brew_dependencies
+  git submodule update --init
+  symlink_dotfiles
+  change_shell_to_zsh
 
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim -c ":PluginInstall"
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim -c ":PluginInstall"
+elif [ $1 == 'symlink' ]; then
+  echo 'Recreating dotfiles'
+  symlink_dotfiles 'force'
+fi
+
