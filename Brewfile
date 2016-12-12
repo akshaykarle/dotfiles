@@ -52,6 +52,7 @@ brew 'kubernetes-cli'
 brew 'watch'
 brew 'rancher-cli'
 brew 'jq'
+brew 'nomad'
 
 cask 'iterm2'
 cask 'ngrok'
