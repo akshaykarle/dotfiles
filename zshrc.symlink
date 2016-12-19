@@ -128,3 +128,5 @@ alias rdbreset="bundle exec rake db:drop db:create db:migrate db:test:prepare"
 alias gh="git hub"
 alias wifi-password-for-network=wifi-password-finder
 alias dkr="docker"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
