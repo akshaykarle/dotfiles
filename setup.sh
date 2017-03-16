@@ -48,6 +48,11 @@ change_shell_to_zsh() {
   fi
 }
 
+install_vim() {
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim -c ":PluginInstall"
+}
+
 if [ $# == 0 ]; then
   echo 'Setting up everything'
   install_brew
@@ -55,11 +60,8 @@ if [ $# == 0 ]; then
   git submodule update --init
   symlink_dotfiles
   change_shell_to_zsh
-
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim -c ":PluginInstall"
+  install_vim
 elif [ $1 == 'symlink' ]; then
   echo 'Recreating dotfiles'
   symlink_dotfiles 'force'
 fi
-
