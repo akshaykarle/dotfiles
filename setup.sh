@@ -44,6 +44,11 @@ change_shell_to_zsh() {
   if [ ${SHELL} != '/bin/zsh' ]
   then
     install_zsh
+    curl https://github.com/powerline/fonts/blob/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf\?raw\=true -o 'Meslo LG M Regular for Powerline.otf'
+    mv -f 'Meslo LG M Regular for Powerline.otf' /Library/Fonts/
+    if [ ! -d ./oh-my-zsh.symlink/custom/themes/powerlevel9k ]; then
+      git clone https://github.com/bhilburn/powerlevel9k.git ./oh-my-zsh.symlink/custom/themes/powerlevel9k
+    fi
     chsh -s /bin/zsh
   fi
 }
