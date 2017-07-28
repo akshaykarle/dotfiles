@@ -72,6 +72,9 @@ Plugin 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-dispatch'
 
 Plugin 'fatih/vim-go'
+Plugin 'hashivim/vim-terraform'
+let g:terraform_align=1
+autocmd FileType terraform setlocal commentstring=#%s
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
