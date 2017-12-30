@@ -131,16 +131,9 @@ global-search-replace() {
 }
 
 alias vg="vagrant"
-alias be="bundle exec"
-alias r="bundle exec rake"
-alias rdbmt="bundle exec rake db:create db:migrate db:test:prepare"
-alias rdbreset="bundle exec rake db:drop db:create db:migrate db:test:prepare"
 alias gh="git hub"
 alias wifi-password-for-network=wifi-password-finder
 alias d="docker"
-alias dm="docker-machine"
-alias dstopall="docker stop $(docker ps -q)"
-alias drmall="docker rm $(docker ps -qa)"
 alias tf="terraform"
 alias go="open `git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@'`| head -n1"
 
