@@ -64,6 +64,7 @@ let g:tagbar_type_go = {
 Plugin 'jplaut/vim-arduino-ino'
 
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_allow_changing_updatetime = 0
 Plugin 'honza/vim-snippets'
 
 Plugin 'tpope/vim-rails'
@@ -141,6 +142,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec='python3'
 
 " ctrl.p settings
 let g:ctrlp_map = '<c-p>'
