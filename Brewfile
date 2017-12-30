@@ -58,6 +58,7 @@ brew 'openconnect'
 brew 'python3'
 brew 'sbt'
 brew 'adr-tools'
+brew 'hub'
 
 cask 'iterm2'
 cask 'ngrok'
