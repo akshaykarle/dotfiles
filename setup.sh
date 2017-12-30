@@ -58,6 +58,10 @@ install_vim() {
   vim -c ":PluginInstall"
 }
 
+install_spacemacs() {
+  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+}
+
 if [ $# == 0 ]; then
   echo 'Setting up everything'
   install_brew
@@ -66,6 +70,7 @@ if [ $# == 0 ]; then
   symlink_dotfiles
   change_shell_to_zsh
   install_vim
+  install_spacemacs
 elif [ $1 == 'symlink' ]; then
   echo 'Recreating dotfiles'
   symlink_dotfiles 'force'

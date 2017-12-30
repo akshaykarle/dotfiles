@@ -3,7 +3,9 @@ tap 'homebrew/bundle'
 tap 'homebrew/services'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
+tap 'd12frosted/emacs-plus'
 
+brew 'd12frosted/emacs-plus/emacs-plus'
 cask 'java'
 
 brew 'ack'
