@@ -122,6 +122,10 @@ wifi-password-finder() {
   security find-generic-password -gwa $1
 }
 
+generate-new-mac-address() {
+  openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//' | xargs sudo ifconfig $1 ether
+}
+
 global-search-replace() {
   ack $1 -l --print0 | xargs -0 sed -i '' "s/$1/$2/g"
 }
