@@ -138,5 +138,6 @@ alias dm="docker-machine"
 alias dstopall="docker stop $(docker ps -q)"
 alias drmall="docker rm $(docker ps -qa)"
 alias tf="terraform"
+alias go="open `git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@'`| head -n1"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
