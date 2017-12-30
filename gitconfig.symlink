@@ -1,13 +1,13 @@
 
 [core]
 excludesfile = ~/.gitignore
-	editor = /usr/local/bin/vim
+	editor = /usr/bin/vim
 
 [hub]
 protocol = https
 [user]
 	name = Akshay Karle
-	email = akshay.a.karle@gmail.com
+	email = 1443108+akshaykarle@users.noreply.github.com
 
 [alias]
   st=status
