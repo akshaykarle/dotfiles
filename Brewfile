@@ -5,7 +5,7 @@ tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'd12frosted/emacs-plus'
 
-brew 'd12frosted/emacs-plus/emacs-plus'
+brew 'd12frosted/emacs-plus/emacs-plus', args: ['HEAD', 'with-natural-title-bars']
 cask 'java'
 
 brew 'ack'
