@@ -131,10 +131,9 @@ global-search-replace() {
 }
 
 alias vg="vagrant"
-alias gh="git hub"
 alias wifi-password-for-network=wifi-password-finder
 alias d="docker"
 alias tf="terraform"
-alias go="open `git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@'`| head -n1"
+alias gh="open $(git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@')| head -n1"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
