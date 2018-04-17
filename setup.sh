@@ -53,9 +53,19 @@ change_shell_to_zsh() {
   fi
 }
 
+install_ycm() {
+  cd  ~/.vim/bundle/YouCompleteMe
+  git clean -f
+  git pull
+  git submodule update --recursive --init
+  ./install.py --clang-completer --gocode-completer
+  cd -
+}
+
 install_vim() {
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim -c ":PluginInstall"
+  install_ycm
 }
 
 install_spacemacs() {
