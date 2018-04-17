@@ -64,7 +64,7 @@ install_ycm() {
 
 install_vim() {
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim -c ":PluginInstall"
+  vim -c ":PluginInstall" -c ":qa"
   install_ycm
 }
 
