@@ -4,7 +4,7 @@ symlink_dotfiles() {
   for src in $(find -maxdepth 2 -name '*.symlink')
   do
     dst="$HOME/.$(basename "${src%.*}")"
-    if [ $1 == 'force' ]; then
+    if [ $1 = 'force' ]; then
       ln -sf $(pwd)/$src $dst
     else
       ln -sf $(pwd)/$src $dst
@@ -81,7 +81,7 @@ if [ $# == 0 ]; then
   change_shell_to_zsh
   install_vim
   install_spacemacs
-elif [ $1 == 'symlink' ]; then
+elif [ $1 = 'symlink' ]; then
   echo 'Recreating dotfiles'
   symlink_dotfiles 'force'
 fi
