@@ -5,26 +5,19 @@ tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'd12frosted/emacs-plus'
 
-cask 'java'
-
-brew 'ack'
-brew 'autoconf'
-brew 'awscli'
-brew 'readline'
+# core packages
+brew 'git'
 brew 'bash'
 brew 'bash-completion'
-brew 'cmake'
-brew 'xz'
 brew 'coreutils'
-brew 'ctags'
-brew 'git'
-brew 'go'
+brew 'ack'
+brew 'autoconf'
+brew 'readline'
 brew 'findutils', args: ['with-default-names']
 brew 'libpng'
 brew 'freetype'
 brew 'openssl'
 brew 'gnu-tar'
-brew 'gotags'
 brew 'libtool'
 brew 'htop-osx'
 brew 'pkg-config'
@@ -32,26 +25,46 @@ brew 'jpeg'
 brew 'libtiff'
 brew 'imagemagick'
 brew 'libevent'
-brew 'maven'
-brew 'nmap'
-brew 'node'
-brew 'nvm'
-brew 'terraform'
 brew 'qt5'
-brew 'ruby-build'
-brew 'rbenv'
-brew 'tmux'
-brew 'd12frosted/emacs-plus/emacs-plus', args: ['HEAD', 'with-natural-title-bars']
-brew 'vim'
-brew 'tmate'
+brew 'xz'
 brew 'watch'
+brew 'nmap'
+
+# 3rd party cli utilities
 brew 'jq'
-brew 'jenv'
-brew 'openconnect'
-brew 'python3'
 brew 'adr-tools'
 brew 'hub'
+brew 'awscli'
+brew 'terraform'
 
+# IDEs & editors
+brew 'd12frosted/emacs-plus/emacs-plus', args: ['HEAD', 'with-natural-title-bars']
+brew 'vim'
+cask 'intellij-idea-ce'
+
+brew 'tmux'
+brew 'tmate'
+
+# Languages & build tools
+brew 'cmake'
+brew 'ctags'
+
+brew 'go'
+brew 'gotags'
+
+brew 'node'
+brew 'nvm'
+
+brew 'rbenv'
+brew 'ruby-build'
+
+cask 'java'
+brew 'jenv'
+brew 'maven'
+
+brew 'python3'
+
+# Applications
 cask 'iterm2'
 cask 'ngrok'
 cask 'virtualbox'
@@ -76,6 +89,5 @@ cask 'vlc'
 cask 'steam'
 cask 'postman'
 cask 'keybase'
-cask 'intellij-idea-ce'
 cask 'slack'
 cask 'zoomus'
