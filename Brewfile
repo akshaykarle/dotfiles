@@ -36,6 +36,7 @@ brew 'adr-tools'
 brew 'hub'
 brew 'awscli'
 brew 'terraform'
+brew 'exercism'
 
 # IDEs & editors
 brew 'd12frosted/emacs-plus/emacs-plus', args: ['HEAD', 'with-natural-title-bars']
