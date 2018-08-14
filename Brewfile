@@ -64,6 +64,9 @@ brew 'maven'
 
 brew 'python3'
 
+brew 'clojure'
+brew 'leiningen'
+
 # Applications
 cask 'iterm2'
 cask 'ngrok'
