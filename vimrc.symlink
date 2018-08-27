@@ -77,6 +77,10 @@ Plugin 'hashivim/vim-terraform'
 let g:terraform_align=1
 autocmd FileType terraform setlocal commentstring=#%s
 
+" Clojure plugins
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-sexp'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
