@@ -4,11 +4,7 @@ symlink_dotfiles() {
   for src in $(find -maxdepth 2 -name '*.symlink')
   do
     dst="$HOME/.$(basename "${src%.*}")"
-    if [ $1 = 'force' ]; then
-      ln -sf $(pwd)/$src $dst
-    else
-      ln -sf $(pwd)/$src $dst
-    fi
+    ln -sf $(pwd)/$src $dst
   done
 }
 
@@ -83,5 +79,5 @@ if [ $# == 0 ]; then
   install_spacemacs
 elif [ $1 = 'symlink' ]; then
   echo 'Recreating dotfiles'
-  symlink_dotfiles 'force'
+  symlink_dotfiles
 fi
