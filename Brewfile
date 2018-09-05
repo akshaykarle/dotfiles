@@ -36,6 +36,7 @@ brew 'adr-tools'
 brew 'hub'
 brew 'awscli'
 brew 'terraform'
+brew 'kubectl'
 brew 'exercism'
 
 # IDEs & editors
