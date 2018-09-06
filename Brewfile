@@ -38,6 +38,7 @@ brew 'awscli'
 brew 'terraform'
 brew 'kubectl'
 brew 'exercism'
+brew 'openvpn'
 
 # IDEs & editors
 brew 'd12frosted/emacs-plus/emacs-plus', args: ['HEAD', 'with-natural-title-bars']

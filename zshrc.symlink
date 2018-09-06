@@ -103,6 +103,11 @@ fi
 
 if [ -d $HOME/.rbenv ]
 then
+  export PATH="$PATH:/usr/local/Cellar/openvpn/2.4.6/sbin"
+fi
+
+if [ -d $HOME/.rbenv ]
+then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
