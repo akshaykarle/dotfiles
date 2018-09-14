@@ -29,6 +29,7 @@ brew 'qt5'
 brew 'xz'
 brew 'watch'
 brew 'nmap'
+brew 'wget'
 
 # 3rd party cli utilities
 brew 'jq'
@@ -70,6 +71,9 @@ brew 'python3'
 brew 'clojure'
 brew 'leiningen'
 
+# Databases
+brew 'postgresql'
+
 # Applications
 cask 'iterm2'
 cask 'ngrok'
@@ -97,3 +101,4 @@ cask 'keybase'
 cask 'slack'
 cask 'zoomus'
 cask 'tunnelblick'
+cask 'datagrip'
