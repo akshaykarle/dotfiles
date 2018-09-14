@@ -66,6 +66,7 @@ install_vim() {
 
 install_spacemacs() {
   git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  ln -sf /usr/local/Cellar/emacs-plus/*/Emacs.app/ /Applications/
 }
 
 if [ $# == 0 ]; then
