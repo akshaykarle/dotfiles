@@ -124,6 +124,11 @@ then
   source $(brew --prefix nvm)/nvm.sh
 fi
 
+if command -v u >/dev/null
+then
+  eval "$(u --completion-script-zsh)"
+fi
+
 wifi-password-finder() {
   security find-generic-password -gwa $1
 }
