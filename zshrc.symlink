@@ -124,10 +124,9 @@ then
   source $(brew --prefix nvm)/nvm.sh
 fi
 
-if command -v u >/dev/null
-then
-  eval "$(u --completion-script-zsh)"
-fi
+# include auto-completion
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+if [ $commands[u] ]; then eval "$(u --completion-script-zsh)"; fi
 
 wifi-password-finder() {
   security find-generic-password -gwa $1
@@ -144,6 +143,7 @@ global-search-replace() {
 alias vg="vagrant"
 alias wifi-password-for-network=wifi-password-finder
 alias d="docker"
+alias k="kubectl"
 alias tf="terraform"
 alias gh="open $(git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@')| head -n1"
 
