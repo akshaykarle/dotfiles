@@ -73,6 +73,8 @@ brew 'python3'
 brew 'clojure'
 brew 'leiningen'
 
+brew 'elixir'
+
 # Databases
 brew 'postgresql'
 
