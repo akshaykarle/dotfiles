@@ -28,7 +28,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 set ts=2 sw=2 et
 
-Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'dkprice/vim-easygrep'
 
 Plugin 'majutsushi/tagbar'
