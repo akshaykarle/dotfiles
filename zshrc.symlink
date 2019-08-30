@@ -83,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="$PATH:/usr/local/opt/openvpn/sbin"
 
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
@@ -99,11 +100,6 @@ fi
 if [ -f ~/.services/git-hub/init ]
 then
   source ~/.services/git-hub/init
-fi
-
-if [ -d $HOME/.rbenv ]
-then
-  export PATH="$PATH:/usr/local/Cellar/openvpn/2.4.6/sbin"
 fi
 
 if [ -d $HOME/.rbenv ]
