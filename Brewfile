@@ -78,6 +78,8 @@ brew 'elixir'
 # Databases
 brew 'postgresql'
 
+# kube UI
+brew 'octant'
 # Applications
 cask 'iterm2'
 cask 'ngrok'
