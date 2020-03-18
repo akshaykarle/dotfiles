@@ -5,6 +5,7 @@ tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'd12frosted/emacs-plus'
 tap 'garethr/kubeval'
+tap 'argoproj/tap'
 
 # core packages
 brew 'git'
@@ -42,6 +43,7 @@ brew 'kubectl'
 brew 'exercism'
 brew 'openvpn'
 brew 'kubeval'
+brew 'argoproj/tap/argocd'
 
 # IDEs & editors
 brew 'd12frosted/emacs-plus/emacs-plus', args: ['HEAD', 'with-natural-title-bars']
