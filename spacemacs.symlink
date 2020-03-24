@@ -59,9 +59,11 @@ values."
      ;; npm install -g import-js
      ;; npm install -g tern
      (javascript :variables
+                 js-indent-level 2
                  javascript-import-tool 'import-js
                  javascript-fmt-tool 'web-beautify)
      react
+     vue
      markdown
      neotree
      (org :variables
