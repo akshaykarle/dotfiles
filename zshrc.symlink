@@ -114,6 +114,12 @@ then
   eval "$(jenv init -)"
 fi
 
+if [ -d $HOME/.pyenv ]
+then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
 if [ -d $HOME/.nvm ]
 then
   export NVM_DIR="$HOME/.nvm"

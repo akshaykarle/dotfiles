@@ -43,7 +43,7 @@ brew 'kubectl'
 brew 'exercism'
 brew 'openvpn'
 brew 'kubeval'
-brew 'argoproj/tap/argocd'
+brew 'argoproj/tap/argo'
 
 # IDEs & editors
 brew 'd12frosted/emacs-plus/emacs-plus', args: ['HEAD', 'with-natural-title-bars']
@@ -111,3 +111,4 @@ cask 'zoomus'
 cask 'tunnelblick'
 cask 'datagrip'
 cask 'tableau'
+cask 'visual-studio-code'
