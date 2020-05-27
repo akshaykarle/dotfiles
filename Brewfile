@@ -43,6 +43,7 @@ brew 'kubectl'
 brew 'exercism'
 brew 'openvpn'
 brew 'kubeval'
+brew 'kustomize'
 brew 'argoproj/tap/argo'
 
 # IDEs & editors
