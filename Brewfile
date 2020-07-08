@@ -6,6 +6,7 @@ tap 'caskroom/versions'
 tap 'd12frosted/emacs-plus'
 tap 'garethr/kubeval'
 tap 'argoproj/tap'
+tap 'fishtown-analytics/dbt'
 
 # core packages
 brew 'git'
@@ -38,6 +39,7 @@ brew 'jq'
 brew 'adr-tools'
 brew 'hub'
 brew 'awscli'
+cask 'google-cloud-sdk'
 brew 'terraform'
 brew 'kubectl'
 brew 'exercism'
@@ -80,6 +82,7 @@ brew 'elixir'
 
 # Databases
 brew 'postgresql'
+brew 'dbt'
 
 # kube UI
 brew 'octant'
