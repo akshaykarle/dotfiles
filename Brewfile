@@ -7,6 +7,7 @@ tap 'd12frosted/emacs-plus'
 tap 'garethr/kubeval'
 tap 'argoproj/tap'
 tap 'fishtown-analytics/dbt'
+tap 'goodwithtech/dockle'
 
 # core packages
 brew 'git'
@@ -93,6 +94,8 @@ cask 'virtualbox'
 
 cask 'vagrant'
 cask 'docker'
+# Dockle - Container Image Linter for Security, Helping build the Best-Practice Docker Image, Easy to start
+brew 'goodwithtech/r/dockle'
 
 cask 'skype'
 cask 'rawtherapee'
