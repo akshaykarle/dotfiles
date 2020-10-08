@@ -85,6 +85,9 @@ brew 'elixir'
 brew 'postgresql'
 brew 'dbt'
 
+# Data Science
+cask 'anaconda'
+
 # kube UI
 brew 'octant'
 # Applications

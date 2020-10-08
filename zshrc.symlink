@@ -127,6 +127,11 @@ then
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
+if [ -d /usr/local/anaconda3/bin ]
+then
+  export PATH="/usr/local/anaconda3/bin:$PATH"
+fi
+
 # include auto-completion
 if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 if [ $commands[u] ]; then eval "$(u --completion-script-zsh)"; fi
