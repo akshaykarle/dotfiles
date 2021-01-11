@@ -31,6 +31,8 @@ install_brew() {
 setup_brew_dependencies() {
   if [ -n "$(command -v brew)" ]
   then
+    xcode-select --install
+
     brew tap Homebrew/bundle
     brew bundle
   fi
