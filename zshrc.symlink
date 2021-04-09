@@ -89,6 +89,10 @@ export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 export CDPATH=$GOPATH/src/github.com
 
+# google-cloud-sdk path and auto-completion setup
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
 if [ -d ~/.services ]
 then
   for f in $(ls ~/.services/.*)
