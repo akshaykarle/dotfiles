@@ -48,6 +48,7 @@ brew 'kustomize'
 brew 'vim'
 cask 'emacs'
 cask 'intellij-idea-ce'
+cask 'datagrip'
 cask 'visual-studio-code'
 
 brew 'tmux'
@@ -70,6 +71,7 @@ brew 'jenv'
 brew 'maven'
 
 brew 'python3'
+brew 'poetry'
 
 brew 'clojure'
 brew 'leiningen'
@@ -84,6 +86,7 @@ cask 'anaconda'
 
 # kube UI
 brew 'octant'
+
 # Applications
 cask 'iterm2'
 cask 'ngrok'
@@ -101,7 +104,7 @@ cask 'android-file-transfer'
 cask 'flycut'
 cask '1password'
 cask 'dropbox'
-cask 'signal'
+# cask 'signal'
 cask 'caffeine'
 cask 'spotify'
 cask 'vlc'
@@ -110,3 +113,4 @@ cask 'keybase'
 cask 'slack'
 cask 'zoom'
 cask 'pritunl'
+cask 'microsoft-office'
