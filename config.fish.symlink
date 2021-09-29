@@ -49,6 +49,10 @@ if status is-interactive
     ack $1 -l --print0 | xargs -0 sed -i '' "s/$1/$2/g"
   end
 
+  function awsume
+    assume-role $argv | sed 's/^export/set -x --global/' | sed 's/=/ /' | source
+  end
+
   # aliases
   alias g="git"
   alias vg="vagrant"
