@@ -3,11 +3,15 @@
 symlink_dotfiles() {
   for src in $(gfind -maxdepth 2 -name '*.symlink')
   do
-    dst="$HOME/.$(basename "${src%.*}")"
-    ln -sf $(pwd)/$src $dst
+    if [[ $src = *fish* ]] # fish files are special and live in $HOME/.config/fish/
+    then
+      dst="$HOME/.config/fish/$(basename "${src%.*}")"
+      ln -sf $(pwd)/$src $dst
+    else
+      dst="$HOME/.$(basename "${src%.*}")"
+      ln -sf $(pwd)/$src $dst
+    fi
   done
-  ln -sf $(pwd)/config.fish.symlink $HOME/.config/fish/config.fish
-  ln -sf $(pwd)/fish_plugins.symlink $HOME/.config/fish/fish_plugins
 }
 
 install_fish() {
