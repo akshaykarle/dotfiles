@@ -1,30 +1,36 @@
 #!/usr/bin/env bash
 
 symlink_dotfiles() {
-  for src in $(find -maxdepth 2 -name '*.symlink')
+  for src in $(gfind -maxdepth 2 -name '*.symlink')
   do
     dst="$HOME/.$(basename "${src%.*}")"
     ln -sf $(pwd)/$src $dst
   done
+  ln -sf $(pwd)/config.fish.symlink $HOME/.config/fish/config.fish
+  ln -sf $(pwd)/fish_plugins.symlink $HOME/.config/fish/fish_plugins
 }
 
-install_zsh() {
+install_fish() {
   if [ -n "$(command -v yum)" ]
   then
-    sudo yum install -y zsh
+    sudo yum install -y fish
   elif [ -n "$(command -v apt-get)" ]
   then
-    sudo apt-get install -y zsh
+    sudo apt-get install -y fish
   elif [ -n "$(command -v dnf)" ]
   then
-    sudo dnf install -y zsh
+    sudo dnf install -y fish
   fi
+  # install fisher
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  fisher update
+  fish_update_completions
 }
 
 install_brew() {
   if [ -n "$(uname | grep 'Darwin')" ]
   then
-    which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    which brew > /dev/null || bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 }
 
@@ -38,16 +44,12 @@ setup_brew_dependencies() {
   fi
 }
 
-change_shell_to_zsh() {
-  if [ ${SHELL} != '/bin/zsh' ]
+change_shell_to_fish() {
+  if [ ${SHELL} != '/usr/local/bin/fish' ]
   then
-    install_zsh
-    curl https://github.com/powerline/fonts/blob/master/Meslo/Meslo%20LG%20M%20Regular%20for%20Powerline.otf\?raw\=true -o 'Meslo LG M Regular for Powerline.otf'
-    mv -f 'Meslo LG M Regular for Powerline.otf' /Library/Fonts/
-    if [ ! -d ./oh-my-zsh.symlink/custom/themes/powerlevel9k ]; then
-      git clone https://github.com/bhilburn/powerlevel9k.git ./oh-my-zsh.symlink/custom/themes/powerlevel9k
-    fi
-    chsh -s /bin/zsh
+    install_fish
+    echo /usr/local/bin/fish | sudo tee -a /etc/shells
+    chsh -s /usr/local/bin/fish
   fi
 }
 
@@ -76,8 +78,8 @@ if [ $# == 0 ]; then
   install_brew
   setup_brew_dependencies
   git submodule update --init
+  change_shell_to_fish
   symlink_dotfiles
-  change_shell_to_zsh
   install_vim
   install_spacemacs
 elif [ $1 = 'symlink' ]; then

@@ -1,0 +1,60 @@
+# Set lang
+set -xU LANG en_US.UTF-8
+set -xU LC_ALL en_US.UTF-8
+
+# Remove greeting
+set fish_greeting
+
+# Set path for Coreutils
+fish_add_path /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/coreutils/libexec/gnuman
+fish_add_path /usr/local/opt/findutils/libexec/gnubin
+fish_add_path /usr/local/opt/openvpn/sbin
+
+# Source secret envs :)
+if test -f $HOME/.config/fish/secret.fish
+    source $HOME/.config/fish/secret.fish
+end
+
+if status is-interactive
+  # lang imports
+  if test -d $HOME/.rbenv
+    source (rbenv init -|psub)
+  end
+  if test -d $HOME/.jenv
+    source (jenv init -|psub)
+  end
+  if test -d $HOME/.pyenv
+      source (pyenv init -|psub)
+  end
+  if test -d $HOME/.nvm
+    set -gx NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  end
+  set -gx GOPATH $HOME
+
+  # Make Vim default editor
+  set -xU EDITOR vim
+
+  # functions
+  function wifi-password-finder
+    security find-generic-password -gwa $1
+  end
+
+  function generate-new-mac-address
+    openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//' | xargs sudo ifconfig $1 ether
+  end
+
+  function global-search-replace
+    ack $1 -l --print0 | xargs -0 sed -i '' "s/$1/$2/g"
+  end
+
+  # aliases
+  alias g="git"
+  alias vg="vagrant"
+  alias wifi-password-for-network=wifi-password-finder
+  alias d="docker"
+  alias k="kubectl"
+  alias tf="terraform"
+  alias gh="open (git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@')| head -n1"
+end

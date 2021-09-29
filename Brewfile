@@ -9,6 +9,7 @@ tap 'garethr/kubeval'
 brew 'git'
 brew 'bash'
 brew 'bash-completion'
+brew 'fish'
 brew 'coreutils'
 brew 'ack'
 brew 'autoconf'
@@ -30,6 +31,8 @@ brew 'xz'
 brew 'watch'
 brew 'nmap'
 brew 'wget'
+# required for fish- https://github.com/franciscolourenco/done
+brew 'terminal-notifier'
 
 # 3rd party cli utilities
 brew 'jq'
