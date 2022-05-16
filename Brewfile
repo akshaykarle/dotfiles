@@ -3,6 +3,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/services'
 tap 'homebrew/cask'
 tap 'homebrew/cask-versions'
+tap 'dbt-labs/dbt'
 tap 'remind101/formulae'
 
 # core packages
@@ -85,6 +86,7 @@ brew 'elixir'
 brew 'postgresql'
 
 # Data Science
+brew 'dbt-bigquery'
 cask 'anaconda'
 
 # kube UI
