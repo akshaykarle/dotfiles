@@ -66,7 +66,6 @@ brew 'go'
 brew 'gotags'
 
 brew 'node'
-brew 'nvm'
 
 brew 'rbenv'
 brew 'ruby-build'

@@ -17,19 +17,11 @@ end
 
 if status is-interactive
   # lang imports
-  if test -d $HOME/.rbenv
-    source (rbenv init -|psub)
-  end
   if test -d $HOME/.jenv
     source (jenv init -|psub)
   end
   if test -d $HOME/.pyenv
       source (pyenv init -|psub)
-  end
-  if test -d $HOME/.nvm
-    set -gx NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
   end
   set -gx GOPATH $HOME
 
