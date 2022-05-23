@@ -14,6 +14,11 @@ symlink_dotfiles() {
   done
 }
 
+install_fisher() {
+  fish -c "fisher" || fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+  fish -c "fisher update; fish_update_completions"
+}
+
 install_fish() {
   if [ -n "$(command -v yum)" ]
   then
@@ -24,11 +29,26 @@ install_fish() {
   elif [ -n "$(command -v dnf)" ]
   then
     sudo dnf install -y fish
+  elif [ -n "#(command -v pamac)" ]
+  then
+    pamac install fish
   fi
-  # install fisher
-  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-  fisher update
-  fish_update_completions
+}
+
+change_shell_to_fish() {
+    if [[ ! ${SHELL} = *fish* ]]
+    then
+        install_fish
+        if [ -n "$(uname | grep 'Darwin')" ]
+        then
+            echo /usr/local/bin/fish | sudo tee -a /etc/shells
+            chsh -s /usr/local/bin/fish
+        else
+            chsh -s /usr/bin/fish
+        fi
+    fi
+
+    install_fisher
 }
 
 install_brew() {
@@ -45,15 +65,6 @@ setup_brew_dependencies() {
 
     brew tap Homebrew/bundle
     brew bundle
-  fi
-}
-
-change_shell_to_fish() {
-  if [ ${SHELL} != '/usr/local/bin/fish' ]
-  then
-    install_fish
-    echo /usr/local/bin/fish | sudo tee -a /etc/shells
-    chsh -s /usr/local/bin/fish
   fi
 }
 
@@ -74,11 +85,22 @@ install_vim() {
 
 install_spacemacs() {
   git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-  ln -sf /usr/local/Cellar/emacs-plus/*/Emacs.app/ /Applications/
+  if [ -n "$(uname | grep 'Darwin')" ]
+  then
+    ln -sf /usr/local/Cellar/emacs-plus/*/Emacs.app/ /Applications/
+  fi
+}
+
+install_arch_dependencies() {
+  if [ -n "$(command -v pamac)" ]
+  then
+    sh arch.sh
+  fi
 }
 
 if [ $# == 0 ]; then
   echo 'Setting up everything'
+  install_arch_dependencies
   install_brew
   setup_brew_dependencies
   git submodule update --init
@@ -89,4 +111,7 @@ if [ $# == 0 ]; then
 elif [ $1 = 'symlink' ]; then
   echo 'Recreating dotfiles'
   symlink_dotfiles
+elif [ $1 = 'fish' ]; then
+  echo 'Resetting fish shell'
+  change_shell_to_fish
 fi
