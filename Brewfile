@@ -5,6 +5,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-versions'
 tap 'dbt-labs/dbt'
 tap 'remind101/formulae'
+tap 'hashicorp/tap'
 
 # core packages
 brew 'git'
@@ -47,6 +48,7 @@ brew 'kubectl'
 brew 'exercism'
 brew 'openvpn'
 brew 'kustomize'
+brew 'hashicorp/tap/vault'
 
 # IDEs & editors
 brew 'vim'
