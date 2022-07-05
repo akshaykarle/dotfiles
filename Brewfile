@@ -55,7 +55,7 @@ brew 'hashicorp/tap/vault'
 brew 'vim'
 cask 'emacs'
 cask 'intellij-idea-ce'
-cask 'datagrip'
+cask 'dbeaver-community'
 cask 'visual-studio-code'
 
 brew 'tmux'
