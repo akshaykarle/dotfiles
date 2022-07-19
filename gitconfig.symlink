@@ -17,6 +17,7 @@ protocol = https
   l=log --pretty=format:'%Cblue %d %Creset %cd %Cred %h %Cgreen %aN %Creset %s' --color --graph --all --date=short
   br=branch
   supdate = submodule update --remote --merge
+  gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 
 [color]
 	ui = true
