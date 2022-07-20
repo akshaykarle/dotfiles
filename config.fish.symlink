@@ -10,8 +10,13 @@ fish_add_path /usr/local/opt/coreutils/libexec/gnubin /usr/local/opt/coreutils/l
 fish_add_path /usr/local/opt/findutils/libexec/gnubin
 fish_add_path /usr/local/opt/openvpn/sbin
 
+# Source custom scripts
+if test -e $HOME/.config/fish/custom
+    source $HOME/.config/fish/custom/*.fish
+end
+
 # Source secret envs :)
-if test -f $HOME/.config/fish/secret.fish
+if test -e $HOME/.config/fish/secret.fish
     source $HOME/.config/fish/secret.fish
 end
 
