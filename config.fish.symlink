@@ -52,7 +52,6 @@ if status is-interactive
 
   # aliases
   alias g="git"
-  alias vg="vagrant"
   alias wifi-password-for-network=wifi-password-finder
   alias d="docker"
   alias k="kubectl"
