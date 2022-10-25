@@ -62,6 +62,7 @@ setup_brew_dependencies() {
   if [ -n "$(command -v brew)" ]
   then
     xcode-select --install
+    softwareupdate --all --install --force
 
     brew tap Homebrew/bundle
     brew bundle
