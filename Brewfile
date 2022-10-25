@@ -86,7 +86,6 @@ brew 'elixir'
 brew 'postgresql'
 
 # Data Science
-brew 'dbt-bigquery'
 cask 'anaconda'
 
 # kube UI
