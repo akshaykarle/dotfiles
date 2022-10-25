@@ -26,6 +26,8 @@ if status is-interactive
     source (jenv init -|psub)
   end
   if test -d $HOME/.pyenv
+      set -Ux PYENV_ROOT $HOME/.pyenv
+      fish_add_path $PYENV_ROOT/bin
       source (pyenv init -|psub)
   end
   set -gx GOPATH $HOME
