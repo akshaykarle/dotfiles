@@ -95,7 +95,7 @@ install_spacemacs() {
 install_arch_dependencies() {
   if [ -n "$(command -v pamac)" ]
   then
-    sh arch.sh
+    sh arch-setup.sh
   fi
 }
 

@@ -3,7 +3,7 @@
 set -eu
 
 pamac install snapd libpamac-snap-plugin
-# sudo pacman -Sy rbenv
+sudo pacman -S curl git
 sudo systemctl enable --now snapd.socket
 if [ ! -d /snap ]
 then
@@ -21,7 +21,10 @@ snap refresh
 
 sudo snap set system experimental.parallel-instances=true
 
-snap install \
-     docker ngrok brave 1password signal-desktop spotify vlc
+for pkg in docker ngrok brave 1password signal-desktop spotify vlc; do
+    snap install $pkg
+done
 
-snap install intellij-idea-community --classic
+for p in cmake intellij-idea-community; do
+  snap install $pkg --classic
+done
