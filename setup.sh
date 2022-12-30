@@ -99,6 +99,10 @@ install_arch_dependencies() {
   fi
 }
 
+install_tea() {
+    sh <(curl https://tea.xyz)
+}
+
 if [ $# == 0 ]; then
   echo 'Setting up everything'
   install_arch_dependencies
@@ -106,6 +110,7 @@ if [ $# == 0 ]; then
   setup_brew_dependencies
   git submodule update --init
   change_shell_to_fish
+  install_tea
   symlink_dotfiles
   install_vim
   install_spacemacs

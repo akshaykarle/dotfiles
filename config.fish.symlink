@@ -60,3 +60,5 @@ if status is-interactive
   alias tf="terraform"
   alias gh="open (git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@')| head -n1"
 end
+
+function add_tea_environment --on-variable PWD; tea -Eds | source; end  #tea
